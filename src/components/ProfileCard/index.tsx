@@ -1,35 +1,35 @@
-import React from 'react'
+import React from 'react';
 
-import { GrGithub } from 'react-icons/gr'
-import { FaDribbble, FaTwitter } from 'react-icons/fa'
+import { GrGithub } from 'react-icons/gr';
+import { FaDribbble, FaTwitter } from 'react-icons/fa';
 
-import * as S from './styles'
+import * as S from './styles';
 
 const icons = {
   twitter: <FaTwitter />,
   github: <GrGithub />,
-  dribbble: <FaDribbble />
-}
+  dribbble: <FaDribbble />,
+};
 
 type socialLinks = {
-  slug: string
-  link: string
-}
+  slug: string;
+  link: string;
+};
 
 type Props = {
-  name: string
-  role: string
-  image: string
-  socialLinks: socialLinks[]
-  description: string
-}
+  name: string;
+  role: string;
+  image: string;
+  socialLinks: socialLinks[];
+  description: string;
+};
 
 const ProfileCard: React.FC<Props> = ({
   name,
   role,
   image,
   socialLinks,
-  description
+  description,
 }) => (
   <S.Card key={name}>
     <S.Image>
@@ -47,7 +47,7 @@ const ProfileCard: React.FC<Props> = ({
     <S.Name>{name}</S.Name>
     <S.Role>{role}</S.Role>
     <S.SocialLinks>
-      {socialLinks.map((item) => (
+      {socialLinks.map(item => (
         <S.Link key={item.link}>
           <a href={item.link} title={item.slug}>
             {icons[item.slug]}
@@ -57,6 +57,6 @@ const ProfileCard: React.FC<Props> = ({
     </S.SocialLinks>
     <S.Description>{description}</S.Description>
   </S.Card>
-)
+);
 
-export default ProfileCard
+export default ProfileCard;
