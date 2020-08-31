@@ -5,6 +5,7 @@ const GET_LANDING_PAGE = /* GraphQL */ `
       ...header
       ...sectionAboutProject
       ...sectionTech
+      ...sectionConcepts
     }
   }
 
@@ -48,6 +49,15 @@ const GET_LANDING_PAGE = /* GraphQL */ `
         icon {
           url
         }
+        title
+      }
+    }
+  }
+
+  fragment sectionConcepts on LandingPage {
+    sectionConcepts {
+      title
+      concepts {
         title
       }
     }
